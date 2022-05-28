@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_events">Events</string>
     <string name="title_notifications">Settings</string>
+    <string name="add">Click to add mountain peak...</string>
 </resources>
