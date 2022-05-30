@@ -1,18 +1,20 @@
-package com.nebvuu.tothetop.ui.home
+package com.nebvuu.tothetop.ui.fragments.home
 
-import android.graphics.Outline
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import coil.transform.CircleCropTransformation
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nebvuu.tothetop.R
 import com.nebvuu.tothetop.databinding.FragmentHomeBinding
+import com.nebvuu.tothetop.ui.AddPeakActivity
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +36,7 @@ class HomeFragment : Fragment() {
 
         //val textView: TextView = binding.textHome
         //val textTest: TextView = binding.test
+        val floatingActionButton: FloatingActionButton = binding.fabAdd
         val ivProfileImage: ImageView = binding.ivProfileImage
 
         homeViewModel.text.observe(viewLifecycleOwner) {
@@ -48,6 +51,14 @@ class HomeFragment : Fragment() {
             ivProfileImage.load(R.drawable.profile_user){
                 crossfade(true)
                 transformations(CircleCropTransformation())
+            }
+        }
+
+        floatingActionButton.setOnClickListener {
+            //Toast.makeText(context, "FAB ADD", Toast.LENGTH_SHORT).show();
+            activity?.let {
+                val intent = Intent(it, AddPeakActivity::class.java)
+                it.startActivity(intent)
             }
         }
 

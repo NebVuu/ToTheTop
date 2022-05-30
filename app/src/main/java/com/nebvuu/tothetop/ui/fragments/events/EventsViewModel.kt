@@ -1,13 +1,13 @@
-package com.nebvuu.tothetop.ui.settings
+package com.nebvuu.tothetop.ui.fragments.events
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SettingsViewModel : ViewModel() {
+class EventsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Settings Fragment"
+        value = "This is Events Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -1,4 +1,4 @@
-package com.nebvuu.tothetop.ui.settings
+package com.nebvuu.tothetop.ui.fragments.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater

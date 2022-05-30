@@ -1,4 +1,4 @@
-package com.nebvuu.tothetop.ui.events
+package com.nebvuu.tothetop.ui.fragments.events
 
 import android.os.Bundle
 import android.view.LayoutInflater

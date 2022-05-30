@@ -1,6 +1,5 @@
-package com.nebvuu.tothetop.ui.home
+package com.nebvuu.tothetop.ui.fragments.home
 
-import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
