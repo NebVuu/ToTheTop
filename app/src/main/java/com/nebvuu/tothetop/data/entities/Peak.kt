@@ -6,10 +6,11 @@ import java.util.*
 
 @Entity(tableName = "peak_table")
 data class Peak(
-    @PrimaryKey(autoGenerate = false) val peakHeight: Int,
+    @PrimaryKey(autoGenerate = true) val peakHeight: Int,
     val peakName: String,
-    val date: Date,
+    val date: Int,
     val mountain: String,
-    val country: String
+    val country: String,
+    val description: String
 ) {
 }

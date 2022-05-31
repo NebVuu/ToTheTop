@@ -16,7 +16,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/light_green"
+        android:tintMode="@color/white"
+        android:src="@drawable/ic_add_image"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_peak_image"
+        app:layout_constraintEnd_toEndOf="@+id/iv_peak_image"
+        app:maxImageSize="32dp" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="190dp"
@@ -28,35 +42,177 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_peak_image">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rl_peak_name"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_margin="@dimen/list_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
                 android:gravity="center"
                 android:text="Peak name" />
 
             <EditText
+                android:id="@+id/et_peak_name"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corners_input_white"
+                android:hint="Musala"
+                style="@style/input_fields_style"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_peak_height"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_margin="@dimen/list_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_peak_name">
+
+            <TextView
+                style="@style/text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="Peak height" />
+
+            <EditText
+                android:id="@+id/et_peak_height"
+                style="@style/input_fields_style"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corners_input_white"
+                android:hint="2926m"
+                android:inputType="number"
+                android:maxLength="4"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_mountain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_margin="@dimen/list_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_peak_height">
+
+            <TextView
+                style="@style/text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="Mountain" />
+
+            <EditText
+                android:id="@+id/et_mountain_name"
+                style="@style/input_fields_style"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corners_input_white"
+                android:hint="Rila" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_country"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_margin="@dimen/list_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_mountain">
+
+            <TextView
+                style="@style/text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="Country" />
+
+            <EditText
+                android:id="@+id/et_country"
+                style="@style/input_fields_style"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corners_input_white"
+                android:hint="Bulgaria" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_date"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/input_field_height"
+            android:layout_margin="@dimen/list_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_country">
+
+            <TextView
+                style="@style/text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="Date" />
+
+            <EditText
+                android:id="@+id/et_date"
+                style="@style/input_fields_style"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corners_input_white"
+                android:hint="21.05.2022"
+                android:inputType="date" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/list_margin"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_date">
+
+
+            <EditText
+                android:id="@+id/et_mountain_description"
+                style="@style/input_fields_style"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/round_corners_white" />
-        </LinearLayout>
+                android:background="@drawable/round_corners_input_white"
+                android:gravity="start|top"
+                android:hint="Description..."
+                android:inputType="textMultiLine"
+                android:justificationMode="inter_word"
+                android:padding="10dp" />
+        </RelativeLayout>
 
 
         <Button
             android:id="@+id/btn_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/home_screen_margin"
+            android:layout_margin="@dimen/list_margin"
             android:backgroundTint="@color/dark_green"
-            android:fontFamily="@font/fira_regular"
             android:text="@string/add_button"
+            style="@style/text_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

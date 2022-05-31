@@ -3,6 +3,7 @@
     <color name="light_green">#57A695</color>
     <color name="grass_green">#48887B</color>
     <color name="dark_green">#2D6E61</color>
+    <color name="hint_green">#80498075</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>

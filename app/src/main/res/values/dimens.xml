@@ -7,5 +7,8 @@
     <dimen name="home_screen_padding">15dp</dimen>
     <dimen name="home_screen_elements_margin">10dp</dimen>
 
+    <dimen name="list_margin">25dp</dimen>
+    <dimen name="input_field_height">30dp</dimen>
+
     <dimen name="elevation">8dp</dimen>
 </resources>

@@ -110,6 +110,7 @@
         android:src="@drawable/ic_add"
         android:tintMode="@color/white"
         app:maxImageSize="32dp"
+        app:borderWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
