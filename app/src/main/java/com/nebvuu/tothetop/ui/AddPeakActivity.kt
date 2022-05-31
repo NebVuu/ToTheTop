@@ -35,6 +35,7 @@ class AddPeakActivity : AppCompatActivity() {
         val mountainName = binding.etMountainName.text.toString()
         val country = binding.etCountry.text.toString()
         val description = binding.etMountainDescription.text.toString()
+
         //TODO check fields
 
         val peak = Peak(Integer.parseInt(peakHeight), peakName,Integer.parseInt(date), mountainName, country, description)

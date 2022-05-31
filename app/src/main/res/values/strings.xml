@@ -3,6 +3,26 @@
     <string name="title_home">Home</string>
     <string name="title_events">Events</string>
     <string name="title_notifications">Settings</string>
-    <string name="add">Click to add mountain peak...</string>
+    <string name="add">Click to add mountain peak…</string>
     <string name="add_button">Add</string>
+
+    <!-- add peak activity-->
+    <string name="peak_name">Peak name</string>
+    <string name="enter_peak_name">Enter peak name</string>
+
+    <string name="peak_height">Peak height</string>
+    <string name="enter_peak_height">Enter peak height</string>
+
+    <string name="mountain">Mountain</string>
+    <string name="enter_mountain_name">Enter mountain name</string>
+
+    <string name="country">Country</string>
+    <string name="enter_country">Enter country</string>
+
+    <string name="date">Date</string>
+    <string name="enter_climbing_date">Enter climbing date</string>
+
+    <string name="description">Description…</string>
+
+
 </resources>
