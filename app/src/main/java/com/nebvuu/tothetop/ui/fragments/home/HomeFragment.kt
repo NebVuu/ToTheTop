@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nebvuu.tothetop.R
 import com.nebvuu.tothetop.databinding.FragmentHomeBinding
 import com.nebvuu.tothetop.ui.AddPeakActivity
+import com.nebvuu.tothetop.ui.PeakViewModel
 
 class HomeFragment : Fragment() {
 
@@ -30,6 +35,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val peakViewModel = ViewModelProvider(this).get(PeakViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -61,6 +67,21 @@ class HomeFragment : Fragment() {
                 it.startActivity(intent)
             }
         }
+
+        //RecyclerView
+        val adapter = PeakAdapter()
+        val recyclerView = binding.rvHomeScreen
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        //ViewModel
+        peakViewModel.readAllPeaks.observe(viewLifecycleOwner, Observer {peak ->
+            adapter.setData(peak)
+        })
+
+
+
+
 
         return root
     }

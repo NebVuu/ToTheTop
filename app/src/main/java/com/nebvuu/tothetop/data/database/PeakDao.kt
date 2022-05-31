@@ -1,10 +1,7 @@
 package com.nebvuu.tothetop.data.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.nebvuu.tothetop.data.entities.Peak
 
 @Dao
@@ -16,6 +13,7 @@ interface PeakDao {
     @Query("SELECT * FROM peak_table ORDER BY peakHeight DESC")
     fun readAllPeaks(): LiveData<List<Peak>>
 
-
+    @Delete
+    suspend fun deletePeak(peak: Peak)
 
 }

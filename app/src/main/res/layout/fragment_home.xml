@@ -77,7 +77,6 @@
         android:layout_marginTop="@dimen/home_screen_elements_margin"
         android:background="@drawable/round_corners_white"
         app:cardElevation="@dimen/elevation"
-        app:cardPreventCornerOverlap="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cvProfile">
@@ -91,10 +90,8 @@
         android:id="@+id/rv_home_screen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/home_screen_margin"
         android:layout_marginTop="@dimen/home_screen_margin"
         android:layout_marginBottom="@dimen/home_screen_margin"
-        android:background="@color/light_green"
         app:layout_constraintBottom_toTopOf="@+id/fab_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

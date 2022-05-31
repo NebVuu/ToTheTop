@@ -19,6 +19,8 @@ class HomeViewModel : ViewModel() {
         value = R.drawable.profile_user
     }
 
+
+
     val text: LiveData<String> = _text
     val textTest: LiveData<String> = _test
 

@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class PeakViewModel(application: Application): AndroidViewModel(application) {
 
-    private val readAllPeaks: LiveData<List<Peak>>
+    val readAllPeaks: LiveData<List<Peak>>
     private val repository: PeakRepository
 
     init{
@@ -24,6 +24,12 @@ class PeakViewModel(application: Application): AndroidViewModel(application) {
     fun addPeak(peak: Peak){
         viewModelScope.launch (Dispatchers.IO){
             repository.addPeak(peak)
+        }
+    }
+
+    fun deletePeak(peak: Peak){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deletePeak(peak)
         }
     }
 

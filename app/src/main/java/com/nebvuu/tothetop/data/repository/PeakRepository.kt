@@ -11,4 +11,8 @@ class PeakRepository(private val peakDao: PeakDao) {
     suspend fun addPeak(peak: Peak){
         peakDao.addPeak(peak)
     }
+
+    suspend fun deletePeak(peak: Peak){
+        peakDao.deletePeak(peak)
+    }
 }
